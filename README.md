@@ -1,9 +1,6 @@
 # join-appdaemon
 Appdaemon App to receive joaoapps join events into homeassistant
 
-Home Assistant Events will look like:
-
-
 ## Installation
 
 * Drop the `joinListener.py` and `joinListener.yaml` into your appdaemon apps directory
