@@ -6,8 +6,9 @@ from pyjoin import Listener
 class JoinListener(hass.Hass):
     def initialize(self):
         self.api_key = self.args.get("join_api_key")
+        self.port = self.args.get("port")
         self.device_name = self.args.get("device_name")
-        self.listener = Listener(name=self.device_name,port=1822, api_key=self.api_key)
+        self.listener = Listener(name=self.device_name,port=self.port, api_key=self.api_key)
         self.listener.add_callback(self.on_event)
         self.t=None
         self.run()
