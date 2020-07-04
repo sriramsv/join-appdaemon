@@ -1,0 +1,5 @@
+joinListener:
+  class: JoinListener
+  module: joinListener
+  join_api_key: !secret join_api_key 
+  device_name: test
