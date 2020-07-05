@@ -2,13 +2,27 @@
 Appdaemon App to receive joaoapps join events into homeassistant
 
 ## Installation
+* Download the root directory from inside the apps directory here to your local apps directory, then add the configuration to enable the JoinListener module.
+* Add `python-join-api==0.0.7` to requirements.txt for installing the `pyjoin` module
 
-* Drop the `joinListener.py` and `joinListener.yaml` into your appdaemon apps directory
-* Add your Join API Key to your `secrets.yaml` and restart appdaemon
-* This spawns up a small HTTP server which keeps listening to the incoming join messages
-* You might have to whitelist the port you use on your home router for the messages to pass through to your server
-* You should see your `appdaemon` device appear in your list of devices in your join app or on https://joinjoaomgcd.appspot.com/ 
-* Now send any text message from anywhere including tasker/nodered/browser and see your `join_event` appear on homeassistant
+## App Configuration:
+
+``` yaml
+joinListener:
+  class: JoinListener
+  module: joinListener
+  join_api_key: !secret join_api_key 
+  port: 1822
+  device_name: appdaemon
+```
+
+key | optional | type | default | description
+-- | -- | -- | -- | --
+`module` | False | string | | The module name of the app.
+`class` | False | string | | The name of the Class.
+`join_api_key` | False | string | | Join App API key
+`port` | False | integer | | Port to start Listener
+`device_name` | False | string | | Device Identifier in Join
 
 ### Sample Event: 
 
