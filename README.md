@@ -4,6 +4,7 @@ Appdaemon App to receive joaoapps join events into homeassistant
 ## Installation
 * Download the root directory from inside the apps directory here to your local apps directory, then add the configuration to enable the JoinListener module.
 * Add `python-join-api==0.0.7` to requirements.txt for installing the `pyjoin` module
+* You might have to whitelist port `1822` on your home router for the module to work 
 
 ## App Configuration:
 
